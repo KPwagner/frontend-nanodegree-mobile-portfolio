@@ -10,6 +10,7 @@
 
 ## Notes for Part 1 (index.html):
 * The Google Fonts link for Open Sans in the header was one of the major detriments to the Page Speed score. I eliminated the reliance on Google Fonts by not including the link. Since the instructions didn't specifically say the page must render in Open Sans, this was the simplest solution. The CSS still specifies Open Sans as the first preference in case the user has Open Sans as a system font; otherwise the style will fallback to sans-serif.
+* Image optimizations (performed manually with Photoshop) were the other most significant improvement in Page Speed score.
 * After creating seperate CSS files for the base style (style.css), mobile (maxwidth480.css), and print (print.css) with respective media-attribute links for mobile and print, I decided to just inline all of the css except for print. Since the site consists of only one page, and the CSS is relatively short, this seemed like an acceptable compromise. Eliminating Google Fonts and inlining all CSS are techniques I would avoid in practice, but given the high Page Speed requirement, they seemed necessary.
 
 ## Notes for Part 2 (pizza.html):
