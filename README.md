@@ -14,7 +14,7 @@
 
 ## Notes for Part 2 (pizza.html):
 ### Background Pizza Animations:
-updatePositions in main.js was causing a forced syncronous layout by retreiving document.body.scrollTop and then applying style with each time through the for loop.
+updatePositions in main.js was causing a forced synchronous layout by retreiving `document.body.scrollTop` and then applying style with each time through the for loop.
 
 ```Javascript
 function updatePositions() {
@@ -38,7 +38,7 @@ function updatePositions() {
 }
 ```
 
-To eliminate the forced syncronous layout, I move the scrollTop query out of the for loop.
+To eliminate the forced synchronous layout, I move the `scrollTop` query out of the for loop.
 
 ```Javascript
 function updatePositions() {
@@ -75,9 +75,9 @@ The *mover* class elements (background pizza images) were not on seperate layers
 }
 ```
 
-I also reduced the number of background pizzas from 200 to 24. 200 is more than needed for pratical purposes; we only need enough to fill the background of the page. 24 may not be the perfect number, but it was enough to fill my screen while reducing the unnecessary background elements.
+I also reduced the number of background pizzas from 200 to 24. 200 is more than needed for pratical purposes; we only need enough to fill the background of the page. 24 may not be the perfect number, but it was enough to fill my screen while reducing unnecessary background elements.
 
-Additionally, I created a seperate pizza png for the background (pizza_resize.png) since the background pizzas are always *small* size. I didn't see much change in performance by using a smaller image, but the pain profiler indicated it needed less memory with the smaller image.
+Additionally, I created a seperate pizza png for the background (pizza_resize.png) since the background pizzas are always *small* size. I didn't see much change in performance by using a smaller image, but the paint profiler indicated it needed less memory with the smaller image.
 
 ```Javascript
 document.addEventListener('DOMContentLoaded', function() {
@@ -99,7 +99,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 ### Resizing Random Pizza Images
 
-I found two problems with the changePizzaSizes function that were causing the size change to take too much time. First, the querySelectorAll method was being called each time through the for loop; this was not necessary. Second, the function was creating forced syncronous layout by querying offsetWidth of pizza elements (images) then applying style to those elements (setting their width).
+I found two problems with the `changePizzaSizes` function that were causing the size change to take too much time. First, the `querySelectorAll` method was being called each time through the for loop; this was not necessary. Second, the function was creating forced synchronous layout by querying `offsetWidth` of pizza elements (images) then applying style to those elements (setting their width).
 
 ```Javascript
 function changePizzaSizes(size) {
@@ -111,7 +111,7 @@ function changePizzaSizes(size) {
 }
 ```
 
-To eliminate the unnecessary `quearySelectorAll` calls, I created a new variable 'randomPizzas' and set it equal to the array from `querySelectorAll`. Then to eliminate the forced syncranous layout, I moved the variable 'dx' and 'newwidth' out of the for loop so they are only set once before any style is applied. Note, that in order to do this, I had to set 'dx' and 'newidth' based only on the first element in the array 'randomPizzas'; this is acceptable since we want all of the pizza images to be the same size.
+To eliminate the unnecessary `quearySelectorAll` calls, I created a new variable `randomPizzas` and set it equal to the array from `querySelectorAll`. Then to eliminate the forced synchronous layout, I moved the variable `dx` and `newwidth` out of the for loop so they are only set once before any style is applied. Note, that in order to do this, I had to set `dx` and `newidth` based only on the first element in the array `randomPizzas`; this is acceptable since we want all of the pizza images to be the same size.
 
 ```Javascript
 function changePizzaSizes(size) {
