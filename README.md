@@ -1,11 +1,11 @@
 # Project: Website Optimization
 
-**__NOTE:__ 'gh-pages' is the default branch and represents the work that I did to complete this project. 'Master' is the unchanged branch forked from Udacity.**
+**__NOTE:__ 'gh-pages' is the default branch and represents the work that I did to complete this project. 'master' is the unchanged branch forked from Udacity.**
 
 ## Running the Code
 * Download the files or clone the repository.
 * Open index.html in a browser to see part 1 of the project.
-* Part 1 is also host on Github at [http://kpwagner.github.io/frontend-nanodegree-mobile-portfolio/](http://kpwagner.github.io/frontend-nanodegree-mobile-portfolio/) You can see the Page Speed results by using this url with the [https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fkpwagner.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F&tab=mobile](Page Speed Insights Tool).
+* Part 1 is also host on Github at [http://kpwagner.github.io/frontend-nanodegree-mobile-portfolio/](http://kpwagner.github.io/frontend-nanodegree-mobile-portfolio/) You can see the Page Speed results by using this url with the [Page Speed Insights Tool](https://developers.google.com/speed/pagespeed/insights/?url=http%3A%2F%2Fkpwagner.github.io%2Ffrontend-nanodegree-mobile-portfolio%2F&tab=mobile).
 * Open views/pizza.html in a browser to see part 2 of the project.
 
 ## Notes for Part 1 (index.html):
@@ -64,7 +64,7 @@ function updatePositions() {
 }
 ```
 
-The **mover** class elements (background pizza images) were not on seperate layers, so they were causing a lot of unnecessary painting. To cut down on the paint time, I applied `will-change: transform` to the **mover** class.
+The *mover* class elements (background pizza images) were not on seperate layers, so they were causing a lot of unnecessary painting. To cut down on the paint time, I applied `will-change: transform` to the *mover* class.
 
 ```CSS
 .mover {
