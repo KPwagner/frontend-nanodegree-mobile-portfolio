@@ -111,7 +111,7 @@ function changePizzaSizes(size) {
 }
 ```
 
-To eliminate the unnecessary `quearySelectorAll` calls, I created a new variable `randomPizzas` and set it equal to the array from `querySelectorAll`. Then to eliminate the forced synchronous layout, I moved the variable `dx` and `newwidth` out of the for loop so they are only set once before any style is applied. Note, that in order to do this, I had to set `dx` and `newidth` based only on the first element in the array `randomPizzas`; this is acceptable since we want all of the pizza images to be the same size.
+To eliminate the unnecessary `querySelectorAll` calls, I created a new variable `randomPizzas` and set it equal to the array from `querySelectorAll`. Then to eliminate the forced synchronous layout, I moved the variable `dx` and `newwidth` out of the for loop so they are only set once before any style is applied. Note, that in order to do this, I had to set `dx` and `newidth` based only on the first element in the array `randomPizzas`; this is acceptable since we want all of the pizza images to be the same size.
 
 ```Javascript
 function changePizzaSizes(size) {
